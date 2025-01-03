@@ -39,8 +39,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Once `uv` is installed, most of the setup is complete. Clone the repository and install the required packages as shown below.
 
 ```sh
-git clone https://github.com/Almond-Latte/ApkDownloader.git
-cd ApkDownloader
+git clone https://github.com/Almond-Latte/ApkDownloader-uv.git
+cd ApkDownloader-uv
 uv sync
 mv .env.sample .env
 ```
@@ -82,7 +82,7 @@ CONCURRENT_DOWNLOADS = 8
 Run the script with the following command:
 
 ```bash
-python3 ApkDownloader.py
+uv run ApkDownloader.py
 ```
 
 It will automatically set up logging, create directories, and start downloading APKs.
