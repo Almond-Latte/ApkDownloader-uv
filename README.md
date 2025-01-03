@@ -1,6 +1,6 @@
 # ApkDownloader
 
-![Static Badge](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue) ![VirusTotal](https://img.shields.io/badge/AndroZoo-API-orange)
+![Static Badge](https://img.shields.io/badge/Python-3.13-blue) ![VirusTotal](https://img.shields.io/badge/AndroZoo-API-orange)
 
 This script allows you to easily download APK files from a list of hash values using the [AndroZoo API](https://androzoo.uni.lu/).
 
@@ -28,15 +28,25 @@ This is suitable for wide-ranging collection of APKs rather than downloading fro
 
 ## 📦 Installation
 
-Clone from GitHub and install the required packages.
+This application uses `uv`, so please install `uv` accordingly.
+
+Details about installing `uv` are available on [the official website](https://docs.astral.sh/uv/getting-started/installation/), but you can easily install it using the following steps.
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Once `uv` is installed, most of the setup is complete. Clone the repository and install the required packages as shown below.
 
 ```sh
 git clone https://github.com/Almond-Latte/ApkDownloader.git
 cd ApkDownloader
-pip3 install -r requirements.txt
+uv sync
 mv .env.sample .env
 ```
+
 ## 🔑 API Key and Hash List Configuration
+
 In the .env file, specify your AndroZoo API key and the path to the hash list file you want to investigate.
 
 > [!NOTE]
@@ -68,6 +78,7 @@ CONCURRENT_DOWNLOADS = 8
 > There are restrictions on the number of parallel downloads. Be careful not to overload AndroZoo. Please check the AndroZoo API Documentation.
 
 ## ▶ Execution
+
 Run the script with the following command:
 
 ```bash
